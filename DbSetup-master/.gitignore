@@ -1,0 +1,12 @@
+/.project
+/.gradle
+/.settings
+/bin
+build/
+/.classpath
+/.classpath.idea/
+/.java-version
+*.iml
+.idea
+out
+classes

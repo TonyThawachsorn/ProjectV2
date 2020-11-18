@@ -1,0 +1,14 @@
+{% extends "bootstrap/base.html" %}
+
+{%block content %}
+<body style="background-color:DarkOrange;">
+<header>Users you may know</header>
+
+
+
+{% for item in values %}
+  <p>Name: {{item.name}}, Email: {{item.email}}</p>
+{% endfor %}
+
+
+{% endblock %}
