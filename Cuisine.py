@@ -13,7 +13,8 @@ from flask_login import LoginManager, UserMixin, login_user, login_required, log
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'Thisissupposedtobesecret!'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///usertable.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///dinertable.db'
+
 #SQLALCHEMY_BINDS = { 'preferences':  'sqlite:///preferences.db'}
 
 
@@ -30,6 +31,12 @@ class User(UserMixin, db.Model):
     username = db.Column(db.String(15), unique=True)
     email = db.Column(db.String(50), unique=True)
     password = db.Column(db.String(80))
+    seating = db.Column(db.String(10))
+    take_out = db.Column(db.String(10))
+    delivery = db.Column(db.String(10))
+    curbside_pickup = db.Column(db.String(10))
+    social_distancing = db.Column(db.String(10))
+    disinfecting = db.Column(db.String(10))
 
 
     
@@ -52,6 +59,13 @@ class RegisterForm(FlaskForm):
     username = StringField('username', validators=[InputRequired(), Length(min=4, max=15)])
     password = PasswordField('password', validators=[InputRequired(), Length(min=8, max=80)])
 
+class PreferencesForm(FlaskForm):
+    seating = StringField('Seating', validators=[InputRequired(),Length(min=3,max=10)])
+    take_out = StringField('Take Out', validators=[InputRequired(),Length(min=3,max=10)])
+    delivery = StringField('Delivery', validators=[InputRequired(),Length(min=3,max=10)])
+    curbside_pickup = StringField('Curbside Pickup', validators=[InputRequired(),Length(min=3,max=10)])
+    social_distancing = StringField('Social Distancing', validators=[InputRequired(),Length(min=3,max=10)])
+    disinfecting = StringField('Disinfecting', validators=[InputRequired(),Length(min=3,max=10)])
 
 
 
@@ -97,6 +111,24 @@ def signup():
         #return '<h1>' + form.username.data + ' ' + form.email.data + ' ' + form.password.data + '</h1>'
 
     return render_template('signup.html', form=form)
+
+@app.route('/dashboard', methods=['GET', 'POST'])
+def set_prefs():
+    form = PreferencesForm()
+
+    if form.validate_on_submit():
+        #hashed_password = generate_password_hash(form.password.data, method='sha256')
+        new_user = User(seating=form.seating.data,take_out=form.take_out.data, delivery=form.delivery.data, curbside_pickup=form.curbside_pickup.data,social_distancing=form.social_distancing.data,disinfecting=form.disinfecting.data)
+        db.session.add(new_user)
+        db.session.commit()
+
+      
+
+    return render_template('dashboard.html', form=form)
+
+@app.route('/myprefs')
+def Show_My_Prefs():
+    return render_template('myprefs.html',values = User.query.all())
 
 @app.route('/dashboard')
 @login_required
