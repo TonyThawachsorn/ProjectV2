@@ -1,4 +1,5 @@
 {% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
 
 {% block title %}
 Dashboard
@@ -28,6 +29,7 @@ Dashboard
           <ul class="nav navbar-nav navbar-right">
             
             <li><a href="{{ url_for('Show_Other_Users') }}">Show Other Users</a></li>
+            <li><a href="{{ url_for('Show_My_Prefs') }}">My Preferences</a></li>
 
             <li><a href="{{ url_for('mapviewer') }}">Map Viewer</a></li>
             <li><a href="{{ url_for('logout') }}">Log Out</a></li>
@@ -65,42 +67,22 @@ Dashboard
             </div>
           </div>
 -->
-          <h2 class="sub-header">My Preferences</h2>
-          <div class="table-responsive">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>Covid Compliance Criteria</th>
-                  
-                  
-                </tr>
-              </thead>
-              
-            </table>
-          </div>
+         
           <body>
-             <p>Select your restaurant preferences</p>
+            
 
-      <form id="myForm">
-         <select id="mySelect">
-            <option>Indoor Seating</option>
-            <option>Outdoor Seating</option>
-            <option>Take Out</option>
-            <option>Delivery</option>
-            <option>Social Distancing</option>
-            <option>Sanitizing/Disinfecting</option>
-         </select>
-         <input type="button" onclick="multipleFunc()" value="Select multiple options">
+<form class="form-signin" method="POST" action="/dashboard">
+    <h2 class="form-signin-heading">Set your restaurant preferences</h2>
+    {{ form.hidden_tag() }}
+    {{ wtf.form_field(form.seating) }}
+    {{ wtf.form_field(form.take_out) }}
+    {{ wtf.form_field(form.delivery) }}
+    {{ wtf.form_field(form.curbside_pickup) }}
+     {{ wtf.form_field(form.social_distancing) }}
+    {{ wtf.form_field(form.disinfecting) }}
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+  </form>
 
-      </form>
-
-     <p>Hold down the Ctrl (windows) or Command (Mac) button and click</p>
-     <input type="submit" value="Submit">
-      <script>
-         function multipleFunc() {
-            document.getElementById("mySelect").multiple = true;
-         }
-      </script>
    </body>
 
         </div>
