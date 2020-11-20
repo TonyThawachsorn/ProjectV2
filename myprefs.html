@@ -1,0 +1,31 @@
+{% extends "bootstrap/base.html" %}
+
+{%block content %}
+<body style="background-color:DarkOrange;">
+<header>My Preferences</header>
+ <h2 class="sub-header">My Preferences</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Covid Compliance Criteria</th>
+                  
+                  
+                </tr>
+              </thead>
+              
+            </table>
+          </div>
+
+
+{% for item in values %}
+  <p>Seating: {{item.seating}}, 
+  	Take Out: {{item.take_out}}, 
+    Delivery: {{item.delivery}},
+    Curbside Pickup: {{item.curbside_pickup}},
+    Social Distancing: {{item.social_distancing}}
+    Disinfecting: {{item.disinfecting}}</p>
+{% endfor %}
+
+
+{% endblock %}
