@@ -292,14 +292,12 @@ Velocity = Average Productivity = 80%
 ### Stand Up Meeting:
 | Meeting No | Date | Detail |
 | ------ | ------ | ------ |
-### Stand Up Meeting:
-| Meeting No | Date | Detail |
-| ------ | ------ | ------ |
 | 1 | Nov 5 | Brainstorming, Allocated the user stories to specific developers |
 | 2 | Nov 10 | Brainstorming, sharing the progression and figure out the errors |
 | 3 | Nov 17 | Update the progression after meeting with professors |
 | 4 | Nov 19 | Relocate the repo in git due to the technical problems |
 | 5 | Nov 20 | Re-sync the repo across the team and update the progression |
-| 6 | Nov 21 |
+| 6 | Nov 21 | Update the progression and testing the log-in function |
+
 
 
