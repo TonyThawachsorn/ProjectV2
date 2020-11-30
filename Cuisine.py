@@ -8,6 +8,13 @@ from flask_sqlalchemy  import SQLAlchemy
 #from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 
+import json
+import requests
+
+  
+
+
+
 
 
 
@@ -16,6 +23,9 @@ app.config['SECRET_KEY'] = 'Thisissupposedtobesecret!'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///dinertable.db'
 
 #SQLALCHEMY_BINDS = { 'preferences':  'sqlite:///preferences.db'}
+
+api_key= "YtCFEb0J1PCFAZG3Uus3P-cF2BfuLShn0fP_k47LHi_vYKS8Z9EfCmARCetfFm_0vhnm9vMo0wZD97pzMovYN9sQINdLJ3W2ElHBS_sJk0x2ks0ZcyMI3iz4fy3DX3Yx"
+headers = {'Authorization': 'Bearer %s' % api_key}
 
 
 
@@ -142,8 +152,42 @@ def dashboard():
 #def dropdown_seating():
     #seating = ['Indoor','Outdoor']
     #return render_template('new_search.html',seating=seating)
+@app.route('/yelp')
+def yelp_reviews():
+    url = 'https://api.yelp.com/v3/businesses/search'
+    params = {'term':restaurant,'location':'Anaheim'}
+
+    req = requests.get(url, params=params, headers=headers)
+ 
+    parsed = json.loads(req.text)
+ 
+    businesses = parsed["businesses"]
 
 
+ 
+    for business in businesses:
+        print("Name:", business["name"])
+        print("Rating:", business["rating"])
+        print("Address:", " ".join(business["location"]["display_address"]))
+        print("Phone:", business["phone"])
+        print("\n")
+ 
+    id = business["id"]
+ 
+    url="https://api.yelp.com/v3/businesses/" + id + "/reviews"
+ 
+    req = requests.get(url, headers=headers)
+ 
+    parsed = json.loads(req.text)
+ 
+    reviews = parsed["reviews"]
+ 
+    print("--- Reviews ---")
+ 
+    for review in reviews:
+        print("User:", review["user"]["name"], "Rating:", review["rating"], "Review:", review["text"], "\n")
+
+    return render_template('yelp.html',form = form)
 
 
 @app.route('/Show_Other_Users')
@@ -165,6 +209,10 @@ def mapviewer():
 def logout():
     logout_user()
     return redirect(url_for('index'))
+
+
+
+
 
 #if __name__ == '__main__':
     #app.run(debug=True)
