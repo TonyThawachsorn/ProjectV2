@@ -224,9 +224,15 @@ The proposed testing code
 * Pip simplejson
 * SQLite
 
-### Run Application Command
-How to run website:
+### Install the pacakge and Run Application Command
+pip install Flask
+pip install Flask-bootstrap
+pip install Flask-SQLalcheny
+pip install Flask-Login
+pip install simplejson
+install SQ lite from https://www.sqlite.org/download.html
 
+How to run website:
 1) Save Project folder to Desktop on computer
 2) Navigate to Project folder within terminal 
 3) Run the following on Terminal:
