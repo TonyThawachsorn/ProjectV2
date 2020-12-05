@@ -212,7 +212,6 @@ Please follow the link https://bit.ly/31q50o7
 * Test signup
 
 The proposed testing code
-
 ![N|Solid](https://i.ibb.co/X2LSbSR/Screen-Shot-2020-11-02-at-2-45-15-PM.png)
 
 ### Environment to run application
@@ -303,7 +302,20 @@ Velocity = Average Productivity = 80%
 | 3 | Nov 17 | Update the progression after meeting with professors |
 | 4 | Nov 19 | Relocate the repo in git due to the technical problems |
 | 5 | Nov 20 | Re-sync the repo across the team and update the progression |
-| 6 | Nov 21 | Update the progression and testing the log-in function |
+| 6 | Nov 21 | Sharing the progression and brainstorming |
+| 7 | Nov 30 | Sharing the progression |
+| 8 | Dec 2 | Meeting with professor and solve the problems |
+| 9 | Dec 3 | Sharing progression and pytest coverage |
 
+### Test Code and coverage
+Testing coverage 100%
+* Test base
+* Test register page
+* Test login page
+* Test my pregerence
+* Test login
+
+![N|Solid](https://ibb.co/WyPhLWk)
+![N|Solid](https://ibb.co/J7F8kSr)
 
 
