@@ -10,6 +10,7 @@ from flask_login import LoginManager, UserMixin, login_user, login_required, log
 
 import json
 import requests
+import os
 
   
 
@@ -23,9 +24,6 @@ app.config['SECRET_KEY'] = 'Thisissupposedtobesecret!'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///dinertable.db'
 
 #SQLALCHEMY_BINDS = { 'preferences':  'sqlite:///preferences.db'}
-
-api_key= "YtCFEb0J1PCFAZG3Uus3P-cF2BfuLShn0fP_k47LHi_vYKS8Z9EfCmARCetfFm_0vhnm9vMo0wZD97pzMovYN9sQINdLJ3W2ElHBS_sJk0x2ks0ZcyMI3iz4fy3DX3Yx"
-headers = {'Authorization': 'Bearer %s' % api_key}
 
 
 
@@ -152,14 +150,23 @@ def dashboard():
 #def dropdown_seating():
     #seating = ['Indoor','Outdoor']
     #return render_template('new_search.html',seating=seating)
-@app.route('/yelp')
-def yelp_reviews():
+
+def yelp_reviews(cmd):
+    os.system(cmd)
+
+    api_key= "2-eKqHbDGY84ynQr8dU7kHg80TMxTic_SacDpmp5h7AQWu25H7sFKG9bZdmPtwIHyQ21sa6uDCQMv2l5vX86vmk_ZoTKcNM55jmhxCwZ77DiX92GW9pwwbZPq5zKX3Yx"
+    headers = {'Authorization': 'Bearer %s' % api_key}
+
+
     url = 'https://api.yelp.com/v3/businesses/search'
-    params = {'term':restaurant,'location':'Anaheim'}
+    params = {'term':'restaurant','location':'Orange County,California'}
 
     req = requests.get(url, params=params, headers=headers)
  
     parsed = json.loads(req.text)
+
+    
+ 
  
     businesses = parsed["businesses"]
 
@@ -186,9 +193,16 @@ def yelp_reviews():
  
     for review in reviews:
         print("User:", review["user"]["name"], "Rating:", review["rating"], "Review:", review["text"], "\n")
+    
+    return reviews
 
-    return render_template('yelp.html',form = form)
+    
 
+@app.route('/yelp')
+def yelp_output():
+    output = yelp_reviews('./script')
+
+    return render_template('yelp.html',output=output)
 
 @app.route('/Show_Other_Users')
 def Show_Other_Users():
@@ -216,5 +230,3 @@ def logout():
 
 #if __name__ == '__main__':
     #app.run(debug=True)
-
-
