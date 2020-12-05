@@ -30,10 +30,11 @@ Dashboard
             
             <li><a href="{{ url_for('Show_Other_Users') }}">Show Other Users</a></li>
             <li><a href="{{ url_for('Show_My_Prefs') }}">My Preferences</a></li>
-            <li><a href="{{ url_for('yelp_reviews') }}">Yelp Reviews</a></li>
 
             <li><a href="{{ url_for('mapviewer') }}">Map Viewer</a></li>
+            <li><a href="{{ url_for('yelp_output') }}">Yelp Reviews</a></li>
             <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+
 
           </ul>
           
@@ -68,11 +69,21 @@ Dashboard
             </div>
           </div>
 -->
-         
+          <h2 class="sub-header">My Preferences</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Covid Compliance Criteria</th>
+                  
+                  
+                </tr>
+              </thead>
+              
+            </table>
+          </div>
           <body>
-            
-
-<form class="form-signin" method="POST" action="/dashboard">
+    <form class="form-signin" method="POST" action="/dashboard">
     <h2 class="form-signin-heading">Set your restaurant preferences</h2>
     {{ form.hidden_tag() }}
     {{ wtf.form_field(form.seating) }}
@@ -83,10 +94,10 @@ Dashboard
     {{ wtf.form_field(form.disinfecting) }}
     <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
   </form>
-
    </body>
 
         </div>
       </div>
     </div>
+
 {% endblock %}
