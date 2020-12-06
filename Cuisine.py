@@ -8,10 +8,11 @@ from flask_sqlalchemy  import SQLAlchemy
 #from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 
-import json
-import requests
-import os
 
+from gql import gql, Client
+from gql.transport.requests import RequestsHTTPTransport
+from config import api_key
+import os 
   
 
 
@@ -151,58 +152,47 @@ def dashboard():
     #seating = ['Indoor','Outdoor']
     #return render_template('new_search.html',seating=seating)
 
+
 def yelp_reviews(cmd):
     os.system(cmd)
+    header = {'Authorization': 'bearer {}'.format(api_key),
+          'Content-Type':"application/json"}
 
-    api_key= "2-eKqHbDGY84ynQr8dU7kHg80TMxTic_SacDpmp5h7AQWu25H7sFKG9bZdmPtwIHyQ21sa6uDCQMv2l5vX86vmk_ZoTKcNM55jmhxCwZ77DiX92GW9pwwbZPq5zKX3Yx"
-    headers = {'Authorization': 'Bearer %s' % api_key}
+# Build the request framework
+    transport = RequestsHTTPTransport(url='https://api.yelp.com/v3/graphql', headers=header, use_json=True)
+
+# Create the client
+    client = Client(transport=transport, fetch_schema_from_transport=True)
+        
+# define a simple query
+    query = gql('''
+    {
+  search(term: "restaurant", location: "Orange County, California") {
+    total
+    business {
+      name
+      reviews {
+        text
+        
+      }
+    }
+  }
+}
+''')
+    return client.execute(query)
+    # execute and print this query
+    #print('-'*100)
+    #print(client.execute(query))
 
 
-    url = 'https://api.yelp.com/v3/businesses/search'
-    params = {'term':'restaurant','location':'Orange County,California'}
-
-    req = requests.get(url, params=params, headers=headers)
- 
-    parsed = json.loads(req.text)
-
-    
- 
- 
-    businesses = parsed["businesses"]
-
-
- 
-    for business in businesses:
-        print("Name:", business["name"])
-        print("Rating:", business["rating"])
-        print("Address:", " ".join(business["location"]["display_address"]))
-        print("Phone:", business["phone"])
-        print("\n")
- 
-    id = business["id"]
- 
-    url="https://api.yelp.com/v3/businesses/" + id + "/reviews"
- 
-    req = requests.get(url, headers=headers)
- 
-    parsed = json.loads(req.text)
- 
-    reviews = parsed["reviews"]
- 
-    print("--- Reviews ---")
- 
-    for review in reviews:
-        print("User:", review["user"]["name"], "Rating:", review["rating"], "Review:", review["text"], "\n")
-    
-    return reviews
-
-    
 
 @app.route('/yelp')
 def yelp_output():
     output = yelp_reviews('./script')
 
     return render_template('yelp.html',output=output)
+
+
 
 @app.route('/Show_Other_Users')
 def Show_Other_Users():
