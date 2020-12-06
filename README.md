@@ -235,11 +235,13 @@ How to run website:
 1) Save Project folder to Desktop on computer
 2) Navigate to Project folder within terminal 
 3) Run the following on Terminal:
-	$ python3 Cuisine.py
-	$ export FLASK_APP=Cuisine
-	$ export FLASK_ENV=development
-	$ flask run
-4)Copy URL(http://127.0.0.1:5000/) and paste into web browser 
+    - $ python3 Cuisine.py
+	- $ export FLASK_APP=Cuisine
+	- $ export FLASK_ENV=development
+	- $ flask run
+
+4) Copy URL (http://127.0.0.1:5000) and paste into web browser
+
 
 ### The lesson learned from M1
 * Since we have limited time to deliver M1, then we need to prioritize the user stories, break down the tasks and sub-tasks and distribute to team members. Then, we can focus on each task. We have tried to set up a standup meeting to brainstorm, update progression, and solve the problems.
@@ -256,28 +258,28 @@ There are 6 user stories and 13 Tasks in Milestone 2
 
 | Task No. | Task | Days required | Hours required |
 | ------ | ------ | ------ | ------ |
-| **U1** | **I want to look for restaurants within Orange County. What kind of services do they provide (outdoor/indoor seating, take out, delivery, curbside, social distancing, and disinfecting and sanitizing). I want to find a restaurant that matches my criteria within Orange County** | **10**| M D
-| 1a | Extract location information and names of restaurants from Twitter API. | 4 | 16 |
-| 1b | Create queries for the different keywords(seating, take out, …). | 3 | 12 |
-| 1c | Create interface for user/diner to search for services based on keywords(search bar,sub pages). | 3 | 12 |
+| **U1** | **I want to look for restaurants within Orange County. What kind of services do they provide (outdoor/indoor seating, take out, delivery, curbside, social distancing, and disinfecting and sanitizing). I want to find a restaurant that matches my criteria within Orange County** | **7**| M D
+| 1a | Extract location information and names of restaurants from Twitter API. | 3 | 
+| 1b | Create queries for the different keywords(seating, take out, …). | 2 | 
+| 1c | Create interface for user/diner to search for services based on keywords(search bar,sub pages). | 2 | 
 | **U2** | **As a diner, I want to find restaurants near me that are COVID compliant. How are restaurants maintaining a safe and COVID compliant environment?** | **3** | D
-| 2a | Create additional queries, with keywords related to a restaurant being COVID compliant(from Twitter feed). | 2 | 8 |
-| 2b | Design functionality for user to be able to set search radius on the map. | 1 | 4 |
+| 2a | Create additional queries, with keywords related to a restaurant being COVID compliant(from Twitter feed). | 2 |
+| 2b | Design functionality for user to be able to set search radius on the map. | 1 | 
 | **U3** | **I want to see what others have said about certain restaurants.** | **3** | M
-| 3a | Extract data from Yelp API, to get information/restaurant reviews from the other diners regarding the restaurants in diners’ queries. | 2 | 8 |
-| 3b | Create window within program specificially for Yelp, to store reviews/information about restaurants as they become available. | 1 | 4 |
-| **U4** | **I would like to see information on how restaurants have been impacted by COVID (How long have they been closed for? Are they currently open?)** | **8** | V T
-| 4a | Pull data from Twitter API, posts from restaurants that talk about their open/closed status during pandemic. | 4 | 8 |
-| 4b | Display relevant information(in clear and consistent manner for all restaurants) found in tweets in pop-up dialogue window when user selects a certain restaurant on the map. | 4 | 8 |
+| 3a | Extract data from Yelp API, to get information/restaurant reviews from the other diners regarding the restaurants in diners’ queries. | 2 | 
+| 3b | Create window within program specificially for Yelp, to store reviews/information about restaurants as they become available. | 1 | |
+| **U4** | **I would like to see information on how restaurants have been impacted by COVID (How long have they been closed for? Are they currently open?)** | **6** | V T
+| 4a | Pull data from Twitter API, posts from restaurants that talk about their open/closed status during pandemic. | 3 | 
+| 4b | Display relevant information(in clear and consistent manner for all restaurants) found in tweets in pop-up dialogue window when user selects a certain restaurant on the map. | 3 |
 | **U5** | **How much seating is available at a given restaurant?** | **2** | V
-| 5a | Pull information about seating/seating capacity percentage from restaurants’ twitter pages. | 4 | 8 |
-| 5b | Allow for user to query just seating information when looking up a specific restaurant. | 4 | 8 |
+| 5a | Pull information about seating/seating capacity percentage from restaurants’ twitter pages. | 1 | 
+| 5b | Allow for user to query just seating information when looking up a specific restaurant. | 1 | 
 | **U6** | **I would like to have the option to see restaurants that match my given criteria within a list.** | **2** | M D V T
-| 6a | Create a separate results box within the program – show restaurants that match criteria user has given. | 1 | 4 |
-| 6b | Sort results by which criteria item the user entered in first. | 1 | 4 |
-| | Total | 28 | 112 (28x4)|
+| 6a | Create a separate results box within the program – show restaurants that match criteria user has given. | 1 | 
+| 6b | Sort results by which criteria item the user entered in first. | 1 |
+| | Total | 23 |
 
-Days needed = 28 days | Assume that 4 working hours per day | 4 developers --> 1.5 hour per team member per day
+Days needed = 23 days | Assume that 4 working hours per day | 4 developers --> 1 hour per team member per day
 Velocity = Average Productivity = 80%
 
 | Factors | Data | How to calculate |
@@ -286,12 +288,12 @@ Velocity = Average Productivity = 80%
 | Sprint end date | 5-Dec |  |
 | Working days | 23 |  |
 | Team size | 4 |  |
-| Work hours per day | 1.5 |  |
-| Total available hours | 138 | working days * team size * work hours per day |
-| Average daily available hours | 6 | total available hours / working days |
+| Work hours per day | 1 |  |
+| Total available hours | 92 | working days * team size * work hours per day |
+| Average daily available hours | 4 | total available hours / working days |
 | Average productivity | 80 % |  |
-| Productivity hours | 110.4 | total available hours * average productivity |
-| Average daily productive hours | 4.8 | productivity hours / working days |
+| Productivity hours | 73.6 | total available hours * average productivity |
+| Average daily productive hours | 4 | productivity hours / working days |
 
 
 ### Stand Up Meeting:
@@ -315,7 +317,21 @@ Testing coverage 100%
 * Test my pregerence
 * Test login
 
-![N|Solid](https://ibb.co/WyPhLWk)
-![N|Solid](https://ibb.co/J7F8kSr)
+How to run pytest:
+- $ pytest -v Cuisine_Test.py
 
+How to check percentage coverage:
+- $ pytest --cov=Users Cuisine_Test.py
 
+![N|Solid](https://i.ibb.co/yyY9rn6/Pytest-Coverage.png)
+![N|Solid](https://i.ibb.co/k86zcPq/Pytest-Project-V2-Screenshot.png)
+
+### The lesson learned from M2
+* Calculating velocity and burn down chart: Base on the M1, we have succeeded to use the porportion between the actual working hours burned and the expected hour burned. However, the M2 is different from the M1 which we need the response from the third-party who can provide the permission to get the data. As the beginning of project, we predicted hour required for each user stories  
+* This methodology can only use base on the assumptions: 
+    1) All user stories have to be acheived at the end of iteration
+    2) All estimations have been forcasted precisely
+
+* Since we have been fixed at 4 headcounts, we have adapted the sum of hours left VS sum of hours needed to calculate velocity and create burn down chart instead of the number of tasks left.
+* Testing with pytest will help us to gain confidence in our software.
+* Working in difference environments or systems settings, may makes some challenges such as running application, package installation.
