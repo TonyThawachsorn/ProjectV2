@@ -15,7 +15,7 @@ Restaurants map in Orange County in COVID19 situation
 
 
 ### Team member:
-Dominic Lee, Vanessa Reyes, Thawachsorn Sookthai, Miles von Herrmann
+Dominic Lee , Vanessa Reyes, Thawachsorn Sookthai, Miles von Herrmann
 
 
 ### Stakeholders:
