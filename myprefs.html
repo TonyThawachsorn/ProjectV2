@@ -3,19 +3,7 @@
 {%block content %}
 <body style="background-color:DarkOrange;">
 <header>My Preferences</header>
- <h2 class="sub-header">My Preferences</h2>
-          <div class="table-responsive">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>Covid Compliance Criteria</th>
-                  
-                  
-                </tr>
-              </thead>
-              
-            </table>
-          </div>
+
 
 
 {% for item in values %}
@@ -26,6 +14,19 @@
     Social Distancing: {{item.social_distancing}}
     Disinfecting: {{item.disinfecting}}</p>
 {% endfor %}
+  <body>
+    <form class="form-signin" method="POST" action="/mapviewer">
+    
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Show Restaurants</button>
 
+
+    
+  </form>
+
+   <form class="form-signin" method="POST" action="/dashboard">
+    
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Show Yelp Reviews</button>
+  </form>
+   </body>
 
 {% endblock %}
