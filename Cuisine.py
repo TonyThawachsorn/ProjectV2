@@ -158,13 +158,12 @@ def yelp_reviews(cmd):
     header = {'Authorization': 'bearer {}'.format(api_key),
           'Content-Type':"application/json"}
 
-# Build the request framework
     transport = RequestsHTTPTransport(url='https://api.yelp.com/v3/graphql', headers=header, use_json=True)
 
-# Create the client
+
     client = Client(transport=transport, fetch_schema_from_transport=True)
         
-# define a simple query
+
     query = gql('''
     {
   search(term: "restaurant", location: "Orange County, California") {
@@ -179,6 +178,7 @@ def yelp_reviews(cmd):
   }
 }
 ''')
+    
     return client.execute(query)
     # execute and print this query
     #print('-'*100)
@@ -189,8 +189,55 @@ def yelp_reviews(cmd):
 @app.route('/yelp')
 def yelp_output():
     output = yelp_reviews('./script')
+    print(f'\nMILES:{output}\n')
+    #print( f'\n Claremont {output['search']}')
 
-    return render_template('yelp.html',output=output)
+
+    print()
+    print(f'\nMILES:{output}\n')
+
+    print ()
+    print(output['search']['total'])
+
+    print ()
+    print(output['search']['business'][0])  
+
+    print ()
+    print(f"\nRestaurant Name: {output['search']['business'][0]['name']}\n")  
+
+
+
+    # print ()
+    # print(f"\n All Reviews: {output['search']['business'][0]['reviews'][0]['text']}\n")  
+
+
+    i = 0
+    all_businesses = output['search']['business'][1]
+    print (f'\n\nAll_businesses: {all_businesses}')
+    for business in all_businesses:
+
+        print(f"\nRestaurant Name: {output['search']['business'][i]['name']}")  
+
+        rev_num = 1
+        all_reviews = output['search']['business'][i]['reviews']
+        for review in all_reviews:
+            print (f'\nREVIEW {rev_num}:  {review["text"]}')
+            rev_num+=1
+
+        formatted_output = {output['search']['business'][i]['name']: [all_reviews]}
+        i+=1
+
+
+
+
+
+
+
+
+
+
+
+    return render_template('yelp.html',formatted_output=formatted_output)
 
 
 
