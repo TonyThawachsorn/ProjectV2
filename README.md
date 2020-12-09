@@ -394,7 +394,7 @@ Testing coverage 100%
 * Test base
 * Test register page
 * Test login page
-* Test my pregerence
+* Test my preference
 * Test login
 
 ### The lesson learned from M2
