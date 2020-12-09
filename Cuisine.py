@@ -210,32 +210,34 @@ def yelp_output():
     # print ()
     # print(f"\n All Reviews: {output['search']['business'][0]['reviews'][0]['text']}\n")  
 
-
+    formatted_output = {}
     i = 0
-    all_businesses = output['search']['business'][1]
+    all_businesses = output['search']['business']
     print (f'\n\nAll_businesses: {all_businesses}')
     for business in all_businesses:
-
-        print(f"\nRestaurant Name: {output['search']['business'][i]['name']}")  
+        bus_name = output['search']['business'][i]['name']
+        print(f"\n{bus_name}")  
 
         rev_num = 1
-        all_reviews = output['search']['business'][i]['reviews']
-        for review in all_reviews:
-            print (f'\nREVIEW {rev_num}:  {review["text"]}')
+        zall_reviews = output['search']['business'][i]['reviews']
+
+
+        print (f"\nZALL REVIEWS: {zall_reviews}\n")
+        all_reviews = []
+        for review in zall_reviews:
+            rev = review["text"]
+            print (f'\nREVIEW {rev_num}:  {rev}')
+            all_reviews.append(rev)
             rev_num+=1
 
-        formatted_output = {output['search']['business'][i]['name']: [all_reviews]}
+
+        formatted_output[bus_name] = zall_reviews
+        print (f"\nFormatted Output in the Loop: {formatted_output}\n")
+      
         i+=1
 
 
-
-
-
-
-
-
-
-
+    print (f"\nFormatted Output:  {formatted_output}\n")
 
     return render_template('yelp.html',formatted_output=formatted_output)
 
