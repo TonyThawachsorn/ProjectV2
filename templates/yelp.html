@@ -5,14 +5,15 @@
 <header>Yelp Reviews</header>
 
 <table>
-	Start of Table
+	
 
 {% for restaurant in formatted_output %}
 <tr>
 <p> Restaurant Name: {{restaurant}}</p>
+
 </tr>
 
-		{% for review in restaurant %}
+		{% for review in formatted_output[restaurant] %}
 			<tr><td> Review: {{review}}<td></tr>
 
 
