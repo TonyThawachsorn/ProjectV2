@@ -404,4 +404,4 @@ Testing coverage 100%
     2) All estimations have been forecasted precisely
 * Testing with pytest will help us to gain confidence in our software.
 * Working in different environments or systems settings may make some challenges such as running applications and package installation.
-* If the software needห to connect to the third-party, we need to create plan B in case of unexpected situations that can cause a project delay.
+* If the software need to connect to the third-party, we need to create plan B in case of unexpected situations that can cause a project delay.
