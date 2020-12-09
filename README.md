@@ -79,6 +79,8 @@ Project proposal : Project Requirements Part A
 
 ### User Stories (estimate of completion times) and decomposition into tasks:
 
+**----- Will be done in Milestone 2.0 -----**
+
 1. I want to look for restaurants within Orange County. What kind of services do they provide (outdoor/indoor seating, take out, delivery, curbside, social distancing, and disinfecting and sanitizing). I want to find a restaurant that matches my criteria within Orange County.
 *10 Days*  
 **Tasks:**  
@@ -116,7 +118,7 @@ b) Allow for user to query just seating information when looking up a specific r
 a) Create a separate results box within the program -- show restaurants that match criteria user has given.  
 b) Sort results by which criteria item the user entered in first.   
          
-**-----Milestone 1.0-----**
+**----- Will be done in Milestone 1.0 -----**
  
 7. I would like to see a login page.  
 *4 Days*  
