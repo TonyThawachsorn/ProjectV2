@@ -364,14 +364,19 @@ Please follow the link https://bit.ly/31q50o7
 | 10 | Dec 6 | Brainstorming the problems for possible solution |
 
 ### Test Code and coverage
-Testing coverage 100%
-* Test base
-* Test register page
-* Test login page
-* Test my pregerence
-* Test login
+**Prerequisites:**  
+* Python 3
+* pytest
 
-How to run pytest: (We have separated application which is included pytest into another file --> Cuisine_Test.py)
+In case you did not install pytest:
+```sh
+$ pip install pytest
+```
+
+**Instruction**
+1) Open command prompt or terminal
+2) Go to directory which contains the test file: Cuisine_Test.py 
+3) Run the command:
 ```sh
 $ pytest -v Cuisine_Test.py
 ```
@@ -384,6 +389,13 @@ $ pytest --cov=Users Cuisine_Test.py
 ```
 ![N|Solid](https://i.ibb.co/yyY9rn6/Pytest-Coverage.png)
 100% Coverage.
+
+Testing coverage 100%
+* Test base
+* Test register page
+* Test login page
+* Test my pregerence
+* Test login
 
 ### The lesson learned from M2
 * Calculating velocity and burn down chart: Base on the M1, we have succeeded in using the proportion between the actual working hours burned and the expected hour burned. However, the M2 is different from the M1, which we need to wait for the response from the third-party who can provide permission to their services. Then, in the first half of M2, the actual working hour burned was lower than the forecast.
