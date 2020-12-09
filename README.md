@@ -399,7 +399,7 @@ Testing coverage 100%
 
 ### The lesson learned from M2
 * Calculating velocity and burn down chart: Base on the M1, we have succeeded in using the proportion between the actual working hours burned and the expected hour burned. However, the M2 is different from the M1, which we need to wait for the response from the third-party who can provide permission to their services. Then, in the first half of M2, the actual working hour burned was lower than the forecast.
-* This methodology can only use base on the assumptions: 
+ * This methodology can only use base on the assumptions: 
     1) All user stories have to be achieved at the end of the iteration
     2) All estimations have been forecasted precisely
 * Testing with pytest will help us to gain confidence in our software.
