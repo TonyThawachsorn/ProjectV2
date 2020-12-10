@@ -192,6 +192,14 @@ Please follow the link https://bit.ly/31q50o7
 
 [![N|Solid](https://i.ibb.co/BCcyRhM/GraphJ.png)](https://bit.ly/31q50o7)
 
+**What burndown chart did told us about the team's situation?**
+Because we calculate the burndown chart as (Working day left: X) and (Expected working hours burned left: Y)
+* We worked under the expected working hours every day (we targeted everyone works an hour per day)
+* Especially, in the middle of M1, the midterm exam and pair exercises took almost working hours.
+* However, we accelerated to complete our M1 and able to complete it as promised.
+* The last 8 days, we burned working hours more than target at 6 hours per day averagely.
+* The chart warned us in the middle of M1 that we needed to accelerated and worked more to acheive the target.
+
 
 ### Stand Up Meeting:
 | Meeting No | Date | Detail |
@@ -329,6 +337,7 @@ There are 6 user stories and 13 Tasks in Milestone 2
 
 Days needed = 23 days | Assume that 4 working hours per day | 4 developers --> 1 hour per team member per day
 Velocity = Average Productivity = 80%
+When comparing to the first version of user stories from the M1, we have adapt the days required due to the decreasing of the working days of M2.
 
 | Factors | Data | How to calculate |
 | ------ | ------ | ------ |
@@ -350,6 +359,12 @@ Please follow the link https://bit.ly/31q50o7
 
 ![N|Solid](https://i.ibb.co/TTf0pGd/Screen-Shot-2020-12-07-at-4-03-03-PM.png)
 ![N|Solid](https://i.ibb.co/S0Ph0FZ/Burndown-M2.png)
+
+**What burndown chart did told us about the team's situation?**
+Because we have learned from M1, so we adapted the methodology of burndown calculating. We calculated the burndown chart as (Days of sprint: X) and (Expected productivity hours burned left: Y)
+* At the beginning of M2, we can acheive the productivity hours per day as expected because we have learned a lot from M1 and we realized more clear about how we can proceed in the next step.
+* Although, TDD can provide the benefits when we develop software, but we are the 'rookie' in software development, then, we went through 'dev first, test and solve later' 
+* The 'target' has been calculated base on velocity = 1.0, while 'forecast' has been calculated base on velocity = 0.8. The reason that why our group burned working hours more than expected.
 
 ### Stand Up Meeting:
 | Meeting No | Date | Detail |
