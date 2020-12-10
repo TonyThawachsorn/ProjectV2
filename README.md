@@ -3,8 +3,8 @@
 ## PROJECT REQUIREMENTS:
 In this project you are required to implement a GUI application in Python 3. The GUI app interfaces the user to an underlying data store. The project should be completed using the agile principles articulated in Pilone & Miles. Make sure to meet with your instructor as regularly as you require to ensure that the project is scoped appropriately – neither too narrowly nor too widely.
 ***
-## Milestone 1
-### Part A
+## Milestone 1 - - Setting up project, Research, User stories, Feasibility study and Iteration 1
+### Part A - General information, Research, User stories
 ---
 
 ### Product: Cuisine 'n COVID19
@@ -74,7 +74,7 @@ Project proposal : Project Requirements Part A
 
 ***  
 
-## Part B
+## Part B - Breaking downs user stories and expected working hours required
 ---
 
 ### User Stories (estimate of completion times) and decomposition into tasks:
@@ -145,10 +145,10 @@ b) Create a user account list, data storage location which allows diners to find
 - Be able to view and interact with map that has partial functionality 
 
 ***
-## Part C
+## Part C - Result of development, Burndown chart and lessons learned
 ---
 ### Velocity
-### * Milestone 1
+### * Milestone 1 - Iteration 1
 There are 3 user stories and 6 Tasks in Milestone 1
 
 | Task No. | Task | Days required | Hours required |
@@ -296,7 +296,8 @@ $ export FLASK_APP=Cuisine
 $ export FLASK_ENV=development
 $ flask run
 ```
-4) Copy URL (http://127.0.0.1:5000) and paste into web browser
+4) When the terminal or command prompt show the screen as per below, copy URL (http://127.0.0.1:5000) and paste into web browser
+![N|Solid](https://i.ibb.co/NWnQJQv/Screen-Shot-2020-12-10-at-10-23-50-AM.png)
 
 
 ### The lesson learned from M1
@@ -308,7 +309,7 @@ $ flask run
 ***
 ## Milestone 2
 
-### Velocity
+### User stories and working hours required, Velocity, Burn down chart and 
 
 There are 6 user stories and 13 Tasks in Milestone 2
 
