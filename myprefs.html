@@ -15,7 +15,7 @@
     Disinfecting: {{item.disinfecting}}</p>
 {% endfor %}
   <body>
-    <form class="form-signin" method="POST" action="/mapviewer">
+    <form class="form-signin" method="GET" action="/mapviewer">
     
     <button class="btn btn-lg btn-primary btn-block" type="submit">Show Restaurants</button>
 
@@ -23,7 +23,7 @@
     
   </form>
 
-   <form class="form-signin" method="POST" action="/dashboard">
+   <form class="form-signin" method="GET" action="/dashboard">
     
     <button class="btn btn-lg btn-primary btn-block" type="submit">Show Yelp Reviews</button>
   </form>
