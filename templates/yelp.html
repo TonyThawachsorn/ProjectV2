@@ -3,27 +3,24 @@
 {% block content %}
 <body style="background-color:DarkOrange;">
 <header>Yelp Reviews</header>
+<br />
 
-<table>
-	
-
-{% for restaurant in formatted_output %}
-<tr>
-<p> Restaurant Name: {{restaurant}}</p>
-
-</tr>
-
-		{% for review in formatted_output[restaurant] %}
-			<tr><td> Review: {{review}}<td></tr>
+    <table>
 
 
-		{% endfor %}
+        {% for restaurant,review in formatted_output.items() %}
+        <tr>
+           <td> {{restaurant}}: {{review}}<br /><br /></td>
+            
+
+        </tr>
+
+        
 
 
 
 
+        {% endfor %}
 
-{% endfor %}
-
-</table>
-{% endblock %}
+    </table>
+    {% endblock %}
