@@ -130,6 +130,7 @@ def set_prefs():
         new_user = User(seating=form.seating.data,take_out=form.take_out.data, delivery=form.delivery.data, curbside_pickup=form.curbside_pickup.data,social_distancing=form.social_distancing.data,disinfecting=form.disinfecting.data)
         db.session.add(new_user)
         db.session.commit()
+        return redirect(url_for('Show_My_Prefs'))
 
       
 
@@ -256,6 +257,8 @@ def profile():
 @login_required
 def mapviewer():
     return render_template('mapviewer.html',name=current_user.username)
+
+
 
 @app.route('/logout')
 @login_required
